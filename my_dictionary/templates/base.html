@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    {% block child_js_head_files %} 
+    {% endblock %}
+</head>
+<body>
+    <header class="dict_header">
+        <h1>Welcome to My Simple Django Dictionary</h1>
+    </header>
+    <nav class="dict_navigation">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'words_list' %}">Words List</a></li>
+        <li><a href="{% url 'add_word' %}">Add Word</a></li>
+    </nav>
+    {% block content %}
+
+    {% endblock %}
+
+    <footer>
+        <p>&copy; 2024 <a href="https://github.com/AlexanderGetman">Alexander Getman</a></p>
+    </footer>
+</body>
+</html>

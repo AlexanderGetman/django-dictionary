@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+
+@font-face {
+    font-family: "Norse";
+    src: url('https://cdn.statically.io/gh/TheOdinProject/theodinproject/efdc2888072f409e687d31dc580595dbe4fe0ff4/app/assets/fonts/Norse-Bold.otf');
+}
+
+* {
+    box-sizing: border-box;
+    --font-default: 400 calc(1.8vh + 0.5vw) 'Roboto', serif;
+}
+
+html {
+    background: white;
+}
+
+html, body {
+    max-width: 890px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+body {
+    position:relative;
+    width: 890px;
+    background: rgb(201, 221, 221);
+    min-height: 100vh;
+}
+
+.dict_header {
+    padding-top: 25px;
+    text-align: center;
+}
+
+.dict_header > h1 {
+    margin-block-start: 0;
+    color: rgb(48, 47, 47);
+}
+
+.dict_navigation {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    font-size: 20px;    
+}
+
+.dict_navigation > li {
+    list-style-type: none;
+}
+
+.dict_navigation > li > a {
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(22, 82, 22);
+}
+
+.dict_navigation > li > a:hover {
+    color: white;
+}
+
+.main, .list {
+    padding: 25px 15px 0;
+    font-size: 18px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    color: white;
+    background-color: darkslategray;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {    
+    color: white;
+}
+
+.main span {
+    font-weight: 600;
+}
+
+.add_word {
+    padding: 25px 15px 0;
+    font-size: 18px;
+}
+
+.add_word form {
+    text-align: center;
+    padding-top: 80px;
+}
+
+.add_word input {
+    border-radius: 5px;
+    border: 0;
+    height: 25px;
+    width: 200px;
+}
+
+.add_word form button {
+    font-size: 16px;
+    display: block;
+    color: white;
+    background-color: darkgray;
+    border: 0;
+    border-radius: 10px;
+    width: 80px;
+    height: 40px;
+    margin: 25px auto;    
+}
+
+.add_word form button:hover, .words_list button:hover {
+    color: rgb(83, 77, 77);
+    background-color: rgb(253, 220, 220);
+}
+
+.add_word form button:active, .words_list button:active {
+    vertical-align: top;
+    padding: 8px 13px 6px;
+}
+
+.add_word form label {
+    color: rgb(100, 100, 100);
+    margin-right: 15px;
+}
+
+.add_word form input:first-of-type {
+    margin-right: 25px;
+}
+
+
+.list table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px dashed rgb(140 140 140);
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    table-layout: fixed;
+}
+
+.list table thead {
+    text-align: center;
+    background-color: darkgray;
+}
+
+.words_list tr td:nth-child(2), .words_list tr td:nth-child(3) {
+    border-left: 2px solid rgb(140 140 140);
+}
+
+.words_list tr td:nth-child(3) {
+    text-align: center;
+}
+
+.words_list tr td {
+    border-bottom: 2px dashed rgb(140 140 140);
+}
+
+.words_list button {    
+    font-size: 16px;
+    color: white;
+    background-color: darkgray;
+    border: 0;
+    border-radius: 10px;
+}

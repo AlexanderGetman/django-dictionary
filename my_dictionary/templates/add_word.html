@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %} Add words {% endblock %}
+
+
+{% block content %}
+
+<div class="add_word">
+    <p>Use this form to add new words to the dictionary.</p>
+
+    <form action="" method="post">
+        <label for="original">Original</label>
+        <input type="text" id="original" name="original" required placeholder="Original word">
+        <label for="translation">Translation</label>
+        <input type="text" id="translation" name="translation" required placeholder="Перевод">    
+        {% csrf_token %}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+{% endblock %}

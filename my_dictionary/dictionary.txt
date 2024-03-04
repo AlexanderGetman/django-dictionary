@@ -1,0 +1,5 @@
+Original: Dog, Translation: Собака
+Original: Cat, Translation: Кошка
+Original: Fly, Translation: Муха
+Original: Horse, Translation: Лошадь
+Original: Hedgehog, Translation: Еж

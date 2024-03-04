@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %} Words list {% endblock %}
+
+
+{% block content %}
+
+<div class="list">
+    {% csrf_token %}
+    <p>Here are all words from the dictionary:</p>
+    <table>
+        <thead>
+            <tr>
+                <td>Original</td>
+                <td>Translation</td>
+                <td>Delete entry</td>
+            </tr>
+        </thead>
+
+        <tbody class="words_list">
+        {% for item in data %}        
+            <tr>
+                <td>{{ item.original }}</td>
+                <td>{{ item.translation }}</td>
+                <td><button onclick="deleteEntry({{ item.id }})">Delete</button></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock %}
+
+{% block child_js_head_files %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>    
+    function deleteEntry(id) {
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        $.ajax({
+            url: '/words_list/',
+            headers: { 'X-CSRFToken': csrftoken },
+            method: 'POST',
+            data: {'id': id},
+            success: function(response) {
+                if (response.success) {
+                    alert('Entry deleted successfully!');
+                    location.reload();
+                } else {
+                    alert('Failed to delete entry.');
+                }
+            }
+        });
+    }
+</script>
+{% endblock %}
